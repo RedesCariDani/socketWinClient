@@ -30,7 +30,7 @@ namespace socketWinClient
             {
                 // Establish the remote endpoint for the socket.
                 // This example uses port 11000 on the local computer.
-                IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());
+                //IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());
                 System.Net.IPAddress ipaddress = System.Net.IPAddress.Parse(textBox1.Text);
                 IPEndPoint remoteEP = new IPEndPoint(ipaddress, 80);
 
