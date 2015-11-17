@@ -31,8 +31,8 @@ namespace socketWinClient
                 // Establish the remote endpoint for the socket.
                 // This example uses port 11000 on the local computer.
                 //IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());
-                System.Net.IPAddress ipaddress = System.Net.IPAddress.Parse(textBox1.Text);
-                IPEndPoint remoteEP = new IPEndPoint(ipaddress, 80);
+                System.Net.IPAddress ipaddress = System.Net.IPAddress.Parse(ip.Text);
+                IPEndPoint remoteEP = new IPEndPoint(ipaddress, Int32.Parse(puerto.Text));
 
                 // Create a TCP/IP  socket.
                 Socket sendi = new Socket(AddressFamily.InterNetwork,
@@ -47,7 +47,8 @@ namespace socketWinClient
                          sendi.RemoteEndPoint.ToString();
 
                     // Encode the data string into a byte array.
-                    byte[] msg = Encoding.ASCII.GetBytes("GET / HTTP/1.0\n\n");
+                                        
+                    byte[] msg = Encoding.ASCII.GetBytes(msge.Text);
 
                     // Send the data through the socket.
                     int bytesSent = sendi.Send(msg);
@@ -83,5 +84,14 @@ namespace socketWinClient
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

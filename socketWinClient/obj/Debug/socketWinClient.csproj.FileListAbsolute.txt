@@ -6,3 +6,4 @@ D:\Danielito\socket client Win\socketWinClient\socketWinClient\obj\Debug\socketW
 D:\Danielito\socket client Win\socketWinClient\socketWinClient\obj\Debug\socketWinClient.csproj.GenerateResource.Cache
 D:\Danielito\socket client Win\socketWinClient\socketWinClient\obj\Debug\socketWinClient.exe
 D:\Danielito\socket client Win\socketWinClient\socketWinClient\obj\Debug\socketWinClient.pdb
+D:\Danielito\socket client Win\socketWinClient\socketWinClient\obj\Debug\socketWinClient.Form1.resources
