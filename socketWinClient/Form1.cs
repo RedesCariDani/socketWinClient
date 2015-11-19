@@ -47,12 +47,18 @@ namespace socketWinClient
                          sendi.RemoteEndPoint.ToString();
 
                     // Encode the data string into a byte array.
-                                        
-                    byte[] msg = Encoding.ASCII.GetBytes(msge.Text);
 
-                    // Send the data through the socket.
-                    int bytesSent = sendi.Send(msg);
+                    if (msge.Text != "")
+                    {
+                        byte[] msg = Encoding.ASCII.GetBytes(msge.Text);
 
+                        // Send the data through the socket.
+                        int bytesSent = sendi.Send(msg);
+                    }
+                    if (path.Text != "")
+                    {
+                        sendi.SendFile(path.Text);
+                    }
                     // Receive the response from the remote device.
                     int bytesRec = sendi.Receive(bytes);
                     textBox2.Text = "Echoed test = {0} " +
@@ -83,15 +89,12 @@ namespace socketWinClient
             }
 
         }
+   
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
+            DialogResult result = openFileDialog1.ShowDialog();
+            path.Text = openFileDialog1.FileName;
         }
     }
 }
